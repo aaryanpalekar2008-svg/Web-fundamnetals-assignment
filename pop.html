@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Popup Box</title>
+<style>
+  body {
+    background-color: lightgray;
+  }
+
+  /* button in the center of page */
+  button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  /* box is hidden in the starting */
+  .info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px 50px;
+    font-size: 20px;
+    display: none;
+  }
+
+  /* when button is clicked button hides and box shows */
+  button:active,
+  button:focus {
+    opacity: 0;
+  }
+
+  button:active + .info,
+  button:focus + .info {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+  <button>Click Me</button>
+  <div class="info">This is info</div>
+
+</body>
+</html>

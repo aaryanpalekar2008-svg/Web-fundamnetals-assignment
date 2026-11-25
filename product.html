@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Cards</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f5f6fa; padding: 32px; }
+
+  /* 3 columns on desktop, fewer on smaller screens */
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: auto; }
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+
+  .card { display: flex; flex-direction: column; background: #fff; border-radius: 12px;
+          box-shadow: 0 2px 10px rgba(0,0,0,.1); overflow: hidden; transition: transform .25s, box-shadow .25s; }
+  .card:hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+
+  /* Fixed image height so all cards look equal */
+  .card img { width: 100%; height: 200px; object-fit: cover; }
+  .body { display: flex; flex-direction: column; gap: 8px; padding: 16px; flex: 1; }
+  .category { font-size: 12px; color: #888; text-transform: uppercase; }
+  .price { font-weight: bold; color: #2e7d32; }
+  .rating { color: #f5a623; }
+  .desc { font-size: 14px; color: #555; flex: 1; }
+  .btn { padding: 10px; border: none; border-radius: 6px; background: #4f46e5; color: #fff;
+         cursor: pointer; transition: background .2s; }
+  .btn:hover { background: #3730a3; }
+</style>
+</head>
+<body>
+  <div class="grid" id="productGrid"></div>
+
+<script>
+  // Data: one object per product
+  const products = [
+    { name: "Wireless Headphones", category: "Audio", price: 2999, rating: 4.5, description: "Noise-cancelling over-ear headphones with 30-hour battery." },
+    { name: "Smart Watch", category: "Wearables", price: 4499, rating: 4.2, description: "Tracks fitness, sleep and heart rate with a bright AMOLED screen." },
+    { name: "Mechanical Keyboard", category: "Accessories", price: 3499, rating: 4.7, description: "RGB backlit keyboard with tactile blue switches." },
+    { name: "Laptop Backpack", category: "Bags", price: 1299, rating: 4.1, description: "Water-resistant backpack with padded laptop compartment." },
+    { name: "Bluetooth Speaker", category: "Audio", price: 1999, rating: 4.4, description: "Portable speaker with deep bass and 12-hour playtime." },
+    { name: "Gaming Mouse", category: "Accessories", price: 1599, rating: 4.6, description: "Ergonomic mouse with adjustable DPI up to 12,000." }
+  ];
+
+  // Builds one card element from a product object
+  function createCard(p, index) {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img src="https://picsum.photos/seed/product${index}/400/300" alt="${p.name}">
+      <div class="body">
+        <span class="category">${p.category}</span>
+        <h3>${p.name}</h3>
+        <span class="price">₹${p.price.toLocaleString("en-IN")}</span>
+        <span class="rating">${"★".repeat(Math.round(p.rating))} ${p.rating}</span>
+        <p class="desc">${p.description}</p>
+        <button class="btn">Buy Now</button>
+      </div>`;
+    return card;
+  }
+
+  // Loops over the data and adds every card to the grid
+  const grid = document.getElementById("productGrid");
+  products.forEach((p, i) => grid.appendChild(createCard(p, i)));
+</script>
+</body>
+</html>

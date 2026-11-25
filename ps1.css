@@ -1,0 +1,245 @@
+/* copy background how to blur image from chatgpt */
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+/*  for Background image */
+body::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100vh + 16px);
+
+box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    background-image: url("./netflixbg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(4px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+#parent1{
+    display: flex;
+    left: 450px;
+
+
+    
+   
+}
+
+
+
+
+
+
+#box1{
+    width: 200px;
+    height: auto;
+   
+
+}
+
+
+#box2{
+    position: relative;
+    left: 750px;
+     width: 150px;
+}
+
+#box3{
+    background-color: red;
+    border-color: red;
+    border-radius: 1px solid;
+    width: 150px;
+    position: relative;
+    left:800px
+    
+}
+
+
+#box4{
+    
+  text-align: center;
+  margin-top: 250px;
+  color: white;
+  font-size:75px;
+}
+
+#box5{
+     
+  text-align: center;
+  color: white;
+  position: relative;
+  top: -35px;
+    font-size:75px;
+}
+
+#box6{
+   
+  text-align: center;
+  color: white;
+  position: relative;
+    top: -45px;
+     font-size:35px;
+}
+
+#box7{
+      
+  text-align: center;
+  color: white;
+  position: relative;
+    top: -35px;
+}
+
+#box8{
+    position: relative;
+    left: 450px;
+}
+.box9{
+    height: 60px;
+    width: 350px;
+}
+
+#box10{
+     height: 60px;
+    width: 180px;
+    background-color: red;
+    border: 1px solid;
+    border-color: red;
+}
+
+
+#box11{
+    border: 2px solid;
+    color: darkmagenta;
+    border-radius: 50%;
+    position: relative;
+    top: 85px;
+}
+
+#parent4{
+   height: auto;
+   min-height: 10vh;
+   max-height: 15vh;
+   position: relative;
+   left: -70px;
+  
+    
+    
+}
+
+#boxw{
+
+font-size: 55px;
+position: relative;
+left: 150px;
+top: 90px;
+
+
+
+
+}
+
+.box12{
+    height: 280px;
+    width: 200px;
+    position: relative;
+    top: 120px;
+    left: 220px;
+    border-radius: 15px;
+
+
+}
+
+
+#box13{
+  position: relative;
+  top: 710px;
+  left: 220px;
+  font-size: 40px;
+}
+
+#parent5{
+    position:relative;
+    left:-150px;
+}
+
+
+
+
+#box14{
+    height: 260px;
+    width: 260px;
+    border: 2px solid;
+    border-radius: 5px;
+    position: relative;
+    top: 709px;
+    left: 220px;
+
+}
+
+
+#box15{
+     height: 260px;
+    width: 260px;
+    border: 2px solid;
+    border-radius: 5px;
+    position: relative;
+    top: 445px;
+    left: 550px;
+}
+
+#box16{
+    height: 260px;
+    width: 260px;
+    border: 2px solid;
+    border-radius: 5px;
+    position: relative;
+    top: 182px;
+    left: 850px;
+}
+
+#box17{
+     height: 260px;
+    width: 260px;
+    border: 2px solid;
+    border-radius: 5px;
+    position: relative;
+    top: -81px;
+    left: 1150px;
+}
+
+#box18{
+    position: relative;
+    top: -50px;
+    left: 175px;
+    text-align: center;
+}
+
+#box119{
+ position: relative;
+    top: -20px;
+  left: 520px;
+  
+}
+
+.box19{
+    height: 50px;
+    width: 370px;
+}
+
+#box20{
+height: 50px;
+width: 170px;
+background-color: red;
+border-color: red;
+ 
+}

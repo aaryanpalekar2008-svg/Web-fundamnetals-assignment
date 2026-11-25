@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PS-4 Responsive Footer</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; }
+  .spacer { min-height: 60vh; display: grid; place-items: center; background: #f4f4f4; }
+
+  /* Desktop: 3 columns, copyright row spans all */
+  footer { display: grid; gap: 20px; padding: 32px; background: #222; color: #fff;
+           grid-template-columns: 2fr 1fr 1fr;
+           grid-template-areas:
+             "about links contact"
+             "copy  copy  copy"; }
+  .about   { grid-area: about; }
+  .links   { grid-area: links; }
+  .contact { grid-area: contact; }
+  .copy    { grid-area: copy; text-align: center; border-top: 1px solid #444; padding-top: 16px; }
+  footer a { display: block; color: #ccc; text-decoration: none; margin: 6px 0; }
+
+  /* Tablet: about on top, links + contact side by side */
+  @media (max-width: 900px) {
+    footer { grid-template-columns: 1fr 1fr;
+             grid-template-areas: "about about" "links contact" "copy copy"; }
+  }
+  /* Mobile: everything stacked */
+  @media (max-width: 600px) {
+    footer { grid-template-columns: 1fr;
+             grid-template-areas: "about" "links" "contact" "copy"; }
+  }
+</style>
+</head>
+<body>
+  <div class="spacer"><h1>Resize the window</h1></div>
+  <footer>
+    <div class="about"><h3>MyCompany</h3><p>Building great web experiences.</p></div>
+    <div class="links"><h3>Links</h3><a href="#">Home</a><a href="#">About</a><a href="#">Services</a></div>
+    <div class="contact"><h3>Contact</h3><a href="#">hello@mycompany.com</a><a href="#">+91 98765 43210</a></div>
+    <div class="copy">&copy; 2026 MyCompany. All rights reserved.</div>
+  </footer>
+</body>
+</html>

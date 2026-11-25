@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PS-5 Tom and Jerry Chase</title>
+<style>
+  body { margin: 0; height: 100vh; overflow: hidden; background: linear-gradient(#87ceeb 70%, #8bc34a 70%); }
+
+  /* Shared styling: both characters sit on the ground */
+  .char { position: absolute; bottom: 30%; width: 120px; }
+
+  /* Jerry runs left -> right with a small hop; Tom follows slightly behind */
+  .jerry { animation: run 6s linear infinite, hop .5s ease-in-out infinite alternate; }
+  .tom   { animation: run 6s linear infinite; animation-delay: .8s; }
+
+  @keyframes run {
+    from { left: -150px; }
+    to   { left: 100%; }
+  }
+  @keyframes hop {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-25px); }
+  }
+</style>
+</head>
+<body>
+  <!-- Replace these src values with your own Tom and Jerry images from Google (PNG with transparent background works best) -->
+  <img class="char tom"   src="tom.png"   alt="Tom"   onerror="this.outerHTML='<div class=&quot;char tom&quot; style=&quot;font-size:90px&quot;>🐱</div>'">
+  <img class="char jerry" src="jerry.png" alt="Jerry" onerror="this.outerHTML='<div class=&quot;char jerry&quot; style=&quot;font-size:60px&quot;>🐭</div>'">
+</body>
+</html>

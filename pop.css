@@ -1,0 +1,9 @@
+button:active,
+button:focus {
+  opacity: 0;
+}
+
+button:active + .info,
+button:focus + .info {
+  display: block;
+}
